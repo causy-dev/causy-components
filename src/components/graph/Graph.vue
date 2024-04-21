@@ -4,9 +4,6 @@ import {Handle, Position, VueFlow} from "@vue-flow/core";
 import GraphNode from "@/components/graph/GraphNode.vue";
 import { MiniMap } from '@vue-flow/minimap'
 
-import('@vue-flow/core/dist/style.css');
-import('@/components/graph/vueflow.css');
-
 export default defineComponent({
   name: "Graph",
   components: {
@@ -47,4 +44,6 @@ export default defineComponent({
 </template>
 
 <style scoped>
+@import "vueflow.css";
+@import "@vue-flow/core/dist/style.css";
 </style>
