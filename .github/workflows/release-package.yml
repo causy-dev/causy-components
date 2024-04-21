@@ -2,8 +2,8 @@ name: Github Packages UI Library Actions
 
 on:
   push:
-    branches:
-      - main
+    tags:
+      - '*'
 
 jobs:
   build:
@@ -29,6 +29,13 @@ jobs:
           node-version: 18
           registry-url: https://npm.pkg.github.com/
       - run: yarn
+      - name: Get the version
+        id: get_version
+        run: echo ::set-output name=VERSION::${GITHUB_REF#refs/tags/}
+      - name: Update version in package.json
+        run: |
+          jq '.version = "${{ steps.get_version.outputs.VERSION }}"' package.json > package.tmp.json
+          mv package.tmp.json package.json
       - run: yarn build
       - uses: JS-DevTools/npm-publish@v3
         with:
