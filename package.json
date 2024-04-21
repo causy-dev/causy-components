@@ -37,6 +37,7 @@
   "dependencies": {
     "@storybook/vue3-vite": "^8.0.5",
     "@vue-flow/core": "^1.33.5",
+    "@vue-flow/minimap": "^1.4.0",
     "vite-plugin-css-injected-by-js": "^3.5.0",
     "vue": "^3.2.45"
   },
