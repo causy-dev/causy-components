@@ -1,7 +1,7 @@
 <script lang="ts">
 import {Handle, Position} from "@vue-flow/core";
 export default {
-  name: "Node",
+  name: "GraphNode",
   components: {Handle},
   props: {
     label: {
