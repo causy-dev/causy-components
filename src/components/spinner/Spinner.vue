@@ -37,7 +37,6 @@ const props = defineProps({
 
 .loading-wrapper {
   width: 100%;
-  display: flex;
   align-items: center;
   margin: 0 auto;
 }
