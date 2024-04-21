@@ -35,12 +35,14 @@ export default defineComponent({
 </script>
 
 <template>
-  <VueFlow v-model="localElements" fit-view-on-init>
-    <template #node-custom="{ label }">
-      <GraphNode :label="label as string" />
-    </template>
-    <MiniMap  />
-  </VueFlow>
+  <div style="height: 100%;">
+    <VueFlow v-model="localElements" fit-view-on-init>
+      <template #node-custom="{ label }">
+        <GraphNode :label="label as string" />
+      </template>
+      <MiniMap  />
+    </VueFlow>
+  </div>
 </template>
 
 <style scoped>
