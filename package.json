@@ -1,0 +1,60 @@
+{
+  "files": [
+    "dist"
+  ],
+  "license": "MIT",
+  "main": "./dist/causy-components.umd.js",
+  "module": "./dist/causy-components.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/causy-components.es.js",
+      "require": "./dist/causy-components.umd.js"
+    }
+  },
+  "types": "./dist/types/index.d.ts",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/@causy-dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/causy-dev/causy-components"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
+    "preserve": "vite build",
+    "serve": "vite preview --port 5050",
+    "typecheck": "vue-tsc --noEmit",
+    "preview": "vite preview",
+    "test": "exit 0",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
+    "build-tokens": "node ./src/build/tokens.js"
+  },
+  "name": "@causy-dev/causy-components",
+  "version": "0.0.0",
+  "type": "module",
+  "dependencies": {
+    "@storybook/vue3-vite": "^8.0.5",
+    "vite-plugin-css-injected-by-js": "^3.5.0",
+    "vue": "^3.2.45"
+  },
+  "devDependencies": {
+    "@chromatic-com/storybook": "^1.2.25",
+    "@storybook/addon-essentials": "^8.0.5",
+    "@storybook/addon-interactions": "^8.0.5",
+    "@storybook/addon-links": "^8.0.5",
+    "@storybook/blocks": "^8.0.5",
+    "@storybook/test": "^8.0.5",
+    "@storybook/vue3": "^8.0.5",
+    "@tokens-studio/sd-transforms": "^0.15.2",
+    "@types/node": "^18.11.18",
+    "@vitejs/plugin-vue": "^4.0.0",
+    "storybook": "^8.0.5",
+    "storybook-addon-vue-mdx": "^0.1.5",
+    "storybook-vue-addon": "^0.4.0",
+    "typescript": "^4.9.3",
+    "vite": "^4.0.0",
+    "vue-tsc": "^1.8.11"
+  }
+}

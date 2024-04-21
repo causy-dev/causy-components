@@ -1,0 +1,87 @@
+/**
+ * Do not edit directly
+ * Generated on Sat, 20 Apr 2024 14:20:27 GMT
+ */
+
+:root {
+  --semanticBrand: #9368e6;
+  --semanticText: #f2ecfc;
+  --semanticBackground: #07050c;
+  --colorPrimary0: #ede6fb;
+  --colorPrimary1: #dbcdf7;
+  --colorPrimary2: #c9b3f3;
+  --colorPrimary3: #b79aee;
+  --colorPrimary4: #a581ea;
+  --colorPrimary5: #9368e6;
+  --colorPrimary6: #7138de;
+  --colorPrimary7: #5620bf;
+  --colorPrimary8: #41188f;
+  --colorPrimary9: #2b1060;
+  --colorPrimary10: #160830;
+  --colorWarning0: #fbf0e6;
+  --colorWarning1: #f7e1cd;
+  --colorWarning2: #f3d2b3;
+  --colorWarning3: #eec29a;
+  --colorWarning4: #eab381;
+  --colorWarning5: #e6a468;
+  --colorWarning6: #de8738;
+  --colorWarning7: #bf6c20;
+  --colorWarning8: #8f5118;
+  --colorWarning9: #603610;
+  --colorWarning10: #301b08;
+  --colorInformative0: #e6e9fb;
+  --colorInformative1: #cdd2f7;
+  --colorInformative2: #b3bcf3;
+  --colorInformative3: #9aa6ee;
+  --colorInformative4: #818fea;
+  --colorInformative5: #6879e6;
+  --colorInformative6: #384fde;
+  --colorInformative7: #2035bf;
+  --colorInformative8: #18288f;
+  --colorInformative9: #101b60;
+  --colorInformative10: #080d30;
+  --colorError0: #fbe7e6;
+  --colorError1: #f7cecd;
+  --colorError2: #f3b6b3;
+  --colorError3: #ee9e9a;
+  --colorError4: #ea8581;
+  --colorError5: #e66d68;
+  --colorError6: #de3f38;
+  --colorError7: #bf2620;
+  --colorError8: #8f1c18;
+  --colorError9: #601310;
+  --colorError10: #300908;
+  --colorSuccess0: #e6fbfb;
+  --colorSuccess1: #cdf7f7;
+  --colorSuccess2: #b3f3f3;
+  --colorSuccess3: #9aeeee;
+  --colorSuccess4: #81eaea;
+  --colorSuccess5: #68e6e6;
+  --colorSuccess6: #38dede;
+  --colorSuccess7: #20bfbf;
+  --colorSuccess8: #188f8f;
+  --colorSuccess9: #106060;
+  --colorSuccess10: #083030;
+  --colorNeutralDark0: #cfc5e7;
+  --colorNeutralDark1: #9e8bcf;
+  --colorNeutralDark2: #6e51b6;
+  --colorNeutralDark3: #4b3580;
+  --colorNeutralDark4: #291d46;
+  --colorNeutralDark5: #07050c;
+  --colorNeutralDark6: #06040a;
+  --colorNeutralDark7: #050308;
+  --colorNeutralDark8: #030306;
+  --colorNeutralDark9: #020204;
+  --colorNeutralDark10: #010102;
+  --colorNeutralLight0: #fcfbfe;
+  --colorNeutralLight1: #faf7fe;
+  --colorNeutralLight2: #f7f3fd;
+  --colorNeutralLight3: #f4f0fc;
+  --colorNeutralLight4: #f2ecfc;
+  --colorNeutralLight5: #efe8fb;
+  --colorNeutralLight6: #bfa3ef;
+  --colorNeutralLight7: #905fe3;
+  --colorNeutralLight8: #6224ce;
+  --colorNeutralLight9: #421889;
+  --colorNeutralLight10: #210c45;
+}
