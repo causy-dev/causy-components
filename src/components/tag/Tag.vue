@@ -30,29 +30,34 @@ const props = defineProps({
 
 <style scoped>
 @import url('../../assets/generated/variables.css');
+@import url('../../assets/fonts.css');
 
 .tag {
   display: inline-flex;
   align-items: center;
-  padding: 0.5em 1em;
+  padding: 0.15em 0.3rem;
   border-radius: 0.25em;
   box-sizing: border-box;
-  border: 2px solid;
+  border: 0.2em solid;
+  font-family: "nunito", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
 }
 
 .tag--s {
   font-size: 0.75em;
-  padding: 0.2em 0.5em;
+  padding: 0.05em 0.1em;
 }
 
 .tag--m {
   font-size: 1em;
-  padding: 0.25em 0.5rem;
+  padding: 0.15em 0.3rem;
 }
 
 .tag--l {
   font-size: 1.25em;
-  padding: 0.5em 0.75em;
+  padding: 0.25em 0.5em;
 }
 
 
@@ -61,7 +66,7 @@ const props = defineProps({
 }
 
 .tag--high {
-  font-weight: bold;
+  font-weight: 800;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
 }
 
@@ -92,6 +97,7 @@ const props = defineProps({
 .tag--info {
   background-color: var(--colorInformative5);
   border-color: var(--colorInformative5);
+  color: var(--colorNeutralLight5);
 }
 
 .tag--neutralLight {
