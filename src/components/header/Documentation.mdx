@@ -4,4 +4,15 @@ import Header from "./Header.vue";
 
 <Meta title="Header" component={Header} />;
 # Header
-<Header style={{maxWidth: "400px"}} />;
+<div style={{display: "flex", gap: "10px"}}>
+    <Header style={{maxWidth: "400px"}} size={"s"} >SMALL</Header>
+</div>
+
+
+<div style={{display: "flex", gap: "100px"}}>
+    <Header style={{maxWidth: "400px"}} size={"m"} >MEDIUM</Header>
+</div>
+
+<div style={{display: "flex", gap: "100px", marginTop: "40px"}}>
+    <Header style={{maxWidth: "400px"}} size={"l"} >LARGE</Header>
+</div>

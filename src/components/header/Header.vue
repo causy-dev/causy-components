@@ -2,12 +2,16 @@
 import { defineProps } from 'vue'
 
 const props = defineProps({
-
+  size: {
+    type: String,
+    default: 'm',
+    validator: (value: string) => ['s', 'm', 'l'].includes(value),
+  },
 })
 </script>
 
 <template>
-  <div class="header">
+  <div class="header" aria-label="header" :class="[`header--${size}`]">
     <slot></slot>
   </div>
 </template>
@@ -26,5 +30,17 @@ const props = defineProps({
   width: 100%;
   z-index: 1000;
 }
+
+.header--s {
+  height: 3rem;
+}
+.header--m{
+  height: 4rem;
+}
+.header--l {
+  height: 5rem;
+}
+
+
 
 </style>

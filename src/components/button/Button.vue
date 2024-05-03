@@ -5,18 +5,18 @@ const props = defineProps({
   emphasis: {
     type: String,
     default: 'medium',
-    validator: (value: string) => ['high', 'medium', 'ghost'].includes(value),
+    validator: (value: string) => ['high', 'medium', 'low'].includes(value),
   },
   size: {
     type: String,
-    default: 'sm',
-    validator: (value: string) => ['sm', 'md', 'lg'].includes(value),
+    default: 's',
+    validator: (value: string) => ['s', 'm', 'l'].includes(value),
   },
 })
 </script>
 
 <template>
-  <button :class="`${props.emphasis} ${props.size}`">
+  <button :class="[`button--${emphasis}`, `button--${size}`]">
     <slot></slot>
   </button>
 </template>
@@ -33,55 +33,53 @@ button {
   user-select: none;
 }
 
-.high {
+.button--high {
   background-color: var(--colorPrimary7);
   color: var(--semanticText);
   border-style: solid;
   border-color: var(--colorPrimary7)
 }
 
-.high:hover {
+.button--high:hover {
   background-color: var(--colorPrimary9);
   color: var(--semanticText);
   border-color: var(--colorPrimary9);
 }
 
-.medium {
+.button--medium {
   background-color: transparent;
   border-style: solid;
   border-color: var(--colorPrimary7);
 }
 
-.medium:hover {
+.button--medium:hover {
   background-color: var(--colorPrimary9);
   color: var(--semanticText);
   border-color: var(--colorPrimary9);
 }
 
-.ghost {
+.button--low {
   background-color: transparent;
   color: var(--colorPrimary7);
   border: none;
 }
 
-.ghost:hover {
+.button--low:hover {
   color: var(--colorPrimary9);
 }
 
-.sm {
+.button--s {
   border-width: 1px;
   padding: 0.2rem 0.4rem;
   border-radius: 4px;
 
 }
-.md {
+.button--m {
   border-width: 1.5px;
   padding: 0.4rem 0.6rem;
   border-radius: 6px;
-
-
 }
-.lg {
+.button--l {
   border-width: 2px;
   padding: 0.6rem 0.8rem;
   border-radius: 8px;

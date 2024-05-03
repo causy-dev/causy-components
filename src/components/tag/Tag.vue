@@ -1,0 +1,141 @@
+<script setup lang="ts">
+import { defineProps } from 'vue'
+
+const props = defineProps({
+  appearance: {
+    type: String,
+    default: 'primary',
+    validator: (value: string) => ['primary', 'success', 'danger', 'warning', 'info', 'neutralLight', 'neutralDark'].includes(value),
+  },
+  emphasis: {
+    type: String,
+    default: 'medium',
+    validator: (value: string) => ['low', 'medium', 'high'].includes(value),
+  },
+  size: {
+    type: String,
+    default: 'm',
+    validator: (value: string) => ['s', 'm', 'l'].includes(value),
+  },
+})
+</script>
+
+<template>
+  <div :class="['tag', `tag--${appearance}`, `tag--${emphasis}`, `tag--${size}`]">
+    <slot name="start"></slot>
+    <slot></slot>
+    <slot name="end"></slot>
+  </div>
+</template>
+
+<style scoped>
+@import url('../../assets/generated/variables.css');
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5em 1em;
+  border-radius: 0.25em;
+  box-sizing: border-box;
+  border: 2px solid;
+}
+
+.tag--s {
+  font-size: 0.75em;
+  padding: 0.2em 0.5em;
+}
+
+.tag--m {
+  font-size: 1em;
+  padding: 0.25em 0.5rem;
+}
+
+.tag--l {
+  font-size: 1.25em;
+  padding: 0.5em 0.75em;
+}
+
+
+.tag--medium {
+  /* No changes for medium emphasis */
+}
+
+.tag--high {
+  font-weight: bold;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+}
+
+.tag--primary {
+  background-color: var(--colorPrimary5);
+  border-color: var(--colorPrimary5);
+  color: var(--semanticText);
+}
+
+
+.tag--success {
+  background-color: var(--colorSuccess8);
+  border-color: var(--colorSuccess8);
+  color: var(--colorNeutralLight5);
+}
+
+.tag--danger {
+  background-color: var(--colorError5);
+  border-color: var(--colorError5);
+}
+
+.tag--warning {
+  background-color: var(--colorWarning5);
+  border-color: var(--colorWarning5);
+  color: var(--colorNeutralDark5);
+}
+
+.tag--info {
+  background-color: var(--colorInformative5);
+  border-color: var(--colorInformative5);
+}
+
+.tag--neutralLight {
+  background-color: var(--colorNeutralLight5);
+  border-color: var(--colorNeutralLight5);
+  color: var(--colorNeutralDark5);
+}
+
+.tag--neutralDark {
+  background-color: var(--colorNeutralDark5);
+  border-color: var(--colorNeutralDark5);
+  color: var(--colorNeutralLight5);
+}
+
+.tag--low {
+  background-color: transparent;
+}
+
+.tag--low.tag--primary {
+  color: var(--colorPrimary5);
+}
+
+.tag--low.tag--success {
+  color: var(--colorSuccess8);
+}
+
+.tag--low.tag--danger {
+  color: var(--colorError5);
+}
+
+.tag--low.tag--warning {
+  color: var(--colorWarning5);
+}
+
+.tag--low.tag--info {
+  color: var(--colorInformative5);
+}
+
+.tag--low.tag--neutralLight {
+  color: var(--colorNeutralLight5);
+}
+
+.tag--low.tag--neutralDark {
+  color: var(--colorNeutralDark5);
+}
+
+</style>

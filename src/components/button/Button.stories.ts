@@ -8,7 +8,7 @@ export default {
       control: { type: 'select', options: ['high', 'medium', 'ghost'] },
     },
     size: {
-      control: { type: 'select', options: ['small', 'medium', 'large'] },
+      control: { type: 'select', options: ['s', 'm', 'l'] },
     },
   },
 };

@@ -1,0 +1,67 @@
+import Tag from "./Tag.vue";
+import {Meta, Story} from "@storybook/blocks";
+
+# Tag
+<div style={{gap: "10px", display: "flex"}}>
+    <Tag emphasis={"high"}>High</Tag>
+    <Tag emphasis={"medium"}>Medium</Tag>
+    <Tag emphasis={"low"}>Low</Tag>
+</div>
+<div style={{gap: "10px", display: "flex", marginTop: "20px"}}>
+    <Tag appearance={"primary"}>Primary</Tag>
+    <Tag appearance={"success"}>Success</Tag>
+    <Tag appearance={"danger"}>Danger</Tag>
+    <Tag appearance={"warning"}>Warning</Tag>
+    <Tag appearance={"info"}>Info</Tag>
+    <Tag appearance={"neutralLight"}>Neutral Light</Tag>
+    <Tag appearance={"neutralDark"}>Neutral Dark</Tag>
+</div>
+<div style={{gap: "10px", display: "flex", marginTop: "20px", alignItems: "center"}}>
+    <Tag size={"s"}>Small</Tag>
+    <Tag size={"m"}>Medium</Tag>
+    <Tag size={"l"}>Large</Tag>
+</div>
+
+The `Tag` component is used to display abitrary content in a tag-like format. It can be used to display metadata, labels, or other types of information.
+
+
+## Props
+- `appearance`: This prop controls the appearance of the tag. It accepts the following values:
+  - 'primary'
+  - 'success'
+  - 'danger'
+  - 'warning'
+  - 'info'
+  - 'neutralLight'
+  - 'neutralDark'
+- `emphasis`: This prop controls the emphasis level of the tag. It accepts the following values:
+  - 'low'
+  - 'medium'
+  - 'high'
+- `size`: This prop controls the size of the tag. It accepts the following values:
+  - 's'
+  - 'm'
+  - 'l'
+
+
+## Slots
+
+The `Tag` component has three slots:
+
+- `start`: This slot can be used to add content at the start of the tag.
+- `default`: This slot can be used to add the main content of the tag.
+- `end`: This slot can be used to add content at the end of the tag.
+
+## Usage
+
+Here's an example of how to use the `Tag` component with the `appearance` prop and the `start` and `end` slots:
+
+```vue
+<Tag appearance="primary">
+  <template #start>
+    <Icon name="check" />
+  </template>
+  Primary Tag
+  <template #end>
+    <Icon name="close" />
+  </templ
