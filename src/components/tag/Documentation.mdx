@@ -22,6 +22,19 @@ import {Meta, Story} from "@storybook/blocks";
     <Tag size={"l"}>Large</Tag>
 </div>
 
+
+<div style={{gap: "10px", display: "flex", marginTop: "20px"}}>
+    <Tag appearance={"primary"} clickable>Primary</Tag>
+    <Tag appearance={"success"} clickable>Success</Tag>
+    <Tag appearance={"danger"} clickable>Danger</Tag>
+    <Tag appearance={"warning"} clickable>Warning</Tag>
+    <Tag appearance={"info"} clickable>Info</Tag>
+    <Tag appearance={"neutralLight"} clickable>Neutral Light</Tag>
+    <Tag appearance={"neutralDark"} clickable>Neutral Dark</Tag>
+</div>
+
+
+
 The `Tag` component is used to display abitrary content in a tag-like format. It can be used to display metadata, labels, or other types of information.
 
 
@@ -55,13 +68,3 @@ The `Tag` component has three slots:
 ## Usage
 
 Here's an example of how to use the `Tag` component with the `appearance` prop and the `start` and `end` slots:
-
-```vue
-<Tag appearance="primary">
-  <template #start>
-    <Icon name="check" />
-  </template>
-  Primary Tag
-  <template #end>
-    <Icon name="close" />
-  </templ

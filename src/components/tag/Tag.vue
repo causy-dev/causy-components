@@ -7,6 +7,10 @@ const props = defineProps({
     default: 'primary',
     validator: (value: string) => ['primary', 'success', 'danger', 'warning', 'info', 'neutralLight', 'neutralDark'].includes(value),
   },
+  clickable: {
+    type: Boolean,
+    default: false,
+  },
   emphasis: {
     type: String,
     default: 'medium',
@@ -21,7 +25,7 @@ const props = defineProps({
 </script>
 
 <template>
-  <div :class="['tag', `tag--${appearance}`, `tag--${emphasis}`, `tag--${size}`]">
+  <div  :class="['tag', `tag--${appearance}`, `tag--${emphasis}`, `tag--${size}`, clickable ? 'tag--clickable' : '']" :role="clickable ? 'button' : ''"  aria-label="tag">
     <slot name="start"></slot>
     <slot></slot>
     <slot name="end"></slot>
@@ -44,6 +48,12 @@ const props = defineProps({
   font-weight: 600;
   line-height: normal;
 }
+
+.tag:focus-visible  {
+  outline: none;
+  border-color: var(--colorAccessibilityActive)!important;
+}
+
 
 .tag--s {
   font-size: 0.75em;
@@ -73,9 +83,13 @@ const props = defineProps({
 .tag--primary {
   background-color: var(--colorPrimary5);
   border-color: var(--colorPrimary5);
-  color: var(--semanticText);
+  color: var(--colorNeutralLight5);
 }
 
+.tag--primary.tag--clickable:hover {
+  background-color: var(--colorPrimary8);
+  border-color: var(--colorPrimary8);
+}
 
 .tag--success {
   background-color: var(--colorSuccess8);
@@ -83,9 +97,24 @@ const props = defineProps({
   color: var(--colorNeutralLight5);
 }
 
+.tag--success.tag--clickable:hover {
+  background-color: var(--colorSuccess5);
+  border-color: var(--colorSuccess5);
+  color: var(--colorNeutralDark5);
+
+}
+
+
 .tag--danger {
   background-color: var(--colorError5);
   border-color: var(--colorError5);
+  color: var(--colorNeutralLight5);
+
+}
+
+.tag--danger.tag--clickable:hover {
+  background-color: var(--colorError8);
+  border-color: var(--colorError8);
 }
 
 .tag--warning {
@@ -94,10 +123,22 @@ const props = defineProps({
   color: var(--colorNeutralDark5);
 }
 
+.tag--warning.tag--clickable:hover {
+  background-color: var(--colorWarning8);
+  border-color: var(--colorWarning8);
+  color: var(--colorNeutralLight5);
+
+}
+
 .tag--info {
   background-color: var(--colorInformative5);
   border-color: var(--colorInformative5);
   color: var(--colorNeutralLight5);
+}
+
+.tag--info.tag--clickable:hover {
+  background-color: var(--colorInformative8);
+  border-color: var(--colorInformative8);
 }
 
 .tag--neutralLight {
@@ -106,10 +147,22 @@ const props = defineProps({
   color: var(--colorNeutralDark5);
 }
 
+.tag--neutralLight.tag--clickable:hover {
+  background-color: var(--colorNeutralLight8);
+  border-color: var(--colorNeutralLight8);
+  color: var(--colorNeutralLight5);
+
+}
+
 .tag--neutralDark {
   background-color: var(--colorNeutralDark5);
   border-color: var(--colorNeutralDark5);
   color: var(--colorNeutralLight5);
+}
+
+.tag--neutralDark.tag--clickable:hover {
+  background-color: var(--colorNeutralDark3);
+  border-color: var(--colorNeutralDark3);
 }
 
 .tag--low {
@@ -120,28 +173,71 @@ const props = defineProps({
   color: var(--colorPrimary5);
 }
 
+.tag--low.tag--primary.tag--clickable:hover {
+  background-color: var(--colorPrimary5);
+  border-color: var(--colorPrimary5);
+  color: var(--colorNeutralLight5);
+}
+
 .tag--low.tag--success {
   color: var(--colorSuccess8);
+}
+
+.tag--low.tag--success.tag--clickable:hover {
+  background-color: var(--colorSuccess5);
+  border-color: var(--colorSuccess5);
+  color: var(--colorNeutralDark5);
+
 }
 
 .tag--low.tag--danger {
   color: var(--colorError5);
 }
 
+.tag--low.tag--danger.tag--clickable:hover {
+  background-color: var(--colorError5);
+  border-color: var(--colorError5);
+  color: var(--colorNeutralLight5);
+}
+
+
 .tag--low.tag--warning {
   color: var(--colorWarning5);
+}
+
+.tag--low.tag--warning.tag--clickable:hover {
+  background-color: var(--colorWarning5);
+  border-color: var(--colorWarning5);
+  color: var(--colorNeutralDark5);
 }
 
 .tag--low.tag--info {
   color: var(--colorInformative5);
 }
 
+.tag--low.tag--info.tag--clickable:hover {
+  background-color: var(--colorInformative5);
+  border-color: var(--colorInformative5);
+  color: var(--colorNeutralLight5);
+}
+
 .tag--low.tag--neutralLight {
   color: var(--colorNeutralLight5);
 }
 
+.tag--low.tag--neutralLight.tag--clickable:hover {
+  background-color: var(--colorNeutralLight5);
+  border-color: var(--colorNeutralLight5);
+  color: var(--colorNeutralDark5);
+}
+
 .tag--low.tag--neutralDark {
   color: var(--colorNeutralDark5);
+  border-color: var(--colorNeutralDark5);
+}
+
+.tag--clickable {
+  cursor: pointer;
 }
 
 </style>
