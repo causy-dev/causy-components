@@ -18,6 +18,14 @@ export default defineComponent({
       required: true
     },
   },
+  emits: [
+    'edge-click',
+    'edge-double-click',
+    'edge-contextmenu',
+    'node-click',
+    'node-double-click',
+    'node-contextmenu'
+  ],
   data() {
     return {
       localElements: this.elements
@@ -36,7 +44,14 @@ export default defineComponent({
 
 <template>
   <div style="height: 100%;">
-    <VueFlow v-model="localElements" fit-view-on-init>
+    <VueFlow v-model="localElements" fit-view-on-init
+      @edge-click="$emit('edge-click', $event)"
+      @edge-double-click="$emit('edge-double-click', $event)"
+      @edge-contextmenu="$emit('edge-contextmenu', $event)"
+      @node-click="$emit('node-click', $event)"
+      @node-double-click="$emit('node-double-click', $event)"
+      @node-contextmenu="$emit('node-contextmenu', $event)"
+    >
       <template #node-custom="{ label }">
         <GraphNode :label="label as string" />
       </template>
